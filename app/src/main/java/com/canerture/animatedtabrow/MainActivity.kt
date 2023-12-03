@@ -86,20 +86,17 @@ fun AnimatedTabRowOnlyTextFixed() {
         mutableStateOf(0)
     }
 
-    val fixedItems = remember {
-        listOf(
-            "Home",
-            "Search",
-            "Profile",
-        )
-    }
+    val fixedItems = listOf(
+        "Home",
+        "Search",
+        "Profile",
+    )
 
     Text(text = "TabMode.FIXED")
 
     AnimatedTabRow(
         tabType = TabType.OnlyTitle(fixedItems, 14.sp),
         tabMode = TabMode.FIXED,
-        selectedIndex = selectedFixedIndex,
         onTabClick = {
             selectedFixedIndex = it
         }
@@ -128,7 +125,6 @@ fun AnimatedTabRowOnlyTextScrollable() {
     AnimatedTabRow(
         tabType = TabType.OnlyTitle(scrollableItems, 14.sp),
         tabMode = TabMode.SCROLLABLE,
-        selectedIndex = selectedScrollableIndex,
         onTabClick = {
             selectedScrollableIndex = it
         }
@@ -154,7 +150,6 @@ fun AnimatedTabRowOnlyIconFixed() {
     AnimatedTabRow(
         tabType = TabType.OnlyIcon(items, 24.dp),
         tabMode = TabMode.FIXED,
-        selectedIndex = selectedIndex,
         onTabClick = {
             selectedIndex = it
         }
@@ -184,7 +179,6 @@ fun AnimatedTabRowOnlyIconScrollable() {
     AnimatedTabRow(
         tabType = TabType.OnlyIcon(scrollableItems),
         tabMode = TabMode.SCROLLABLE,
-        selectedIndex = selectedScrollableIndex,
         onTabClick = {
             selectedScrollableIndex = it
         }
@@ -222,7 +216,6 @@ fun AnimatedTabRowTitleAndIconFixedAlwaysShow() {
             labelMode = LabelMode.ALWAYS_SHOW,
         ),
         tabMode = TabMode.FIXED,
-        selectedIndex = selectedIndex,
         onTabClick = {
             selectedIndex = it
         }
@@ -260,7 +253,6 @@ fun AnimatedTabRowTitleAndIconFixedOnlySelected() {
             labelMode = LabelMode.ONLY_SELECTED,
         ),
         tabMode = TabMode.FIXED,
-        selectedIndex = selectedIndex,
         onTabClick = {
             selectedIndex = it
         }
@@ -311,7 +303,6 @@ fun AnimatedTabRowTitleAndIconScrollableAlwaysShow() {
     AnimatedTabRow(
         tabType = TabType.TitleAndIcon(scrollableItems, LabelMode.ALWAYS_SHOW),
         tabMode = TabMode.SCROLLABLE,
-        selectedIndex = selectedScrollableIndex,
         onTabClick = {
             selectedScrollableIndex = it
         }
@@ -362,7 +353,6 @@ fun AnimatedTabRowTitleAndIconScrollableOnlySelected() {
     AnimatedTabRow(
         tabType = TabType.TitleAndIcon(scrollableItems, LabelMode.ONLY_SELECTED),
         tabMode = TabMode.SCROLLABLE,
-        selectedIndex = selectedScrollableIndex,
         onTabClick = {
             selectedScrollableIndex = it
         }

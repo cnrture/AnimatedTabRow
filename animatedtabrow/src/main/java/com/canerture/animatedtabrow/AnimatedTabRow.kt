@@ -14,7 +14,6 @@ fun AnimatedTabRow(
     modifier: Modifier = Modifier,
     tabType: TabType,
     tabMode: TabMode,
-    selectedIndex: Int,
     colors: AnimatedTabRowColors = AnimatedTabRowColors(),
     onTabClick: (Int) -> Unit,
 ) {
@@ -37,7 +36,6 @@ fun AnimatedTabRow(
             is TabType.OnlyTitle -> {
                 AnimatedTabRowOnlyText(
                     tabMode = tabMode,
-                    selectedIndex = selectedIndex,
                     tabData = tabType,
                     tabWidth = tabWidth,
                     colors = colors,
@@ -48,7 +46,7 @@ fun AnimatedTabRow(
             is TabType.OnlyIcon -> {
                 AnimatedTabRowOnlyIcon(
                     tabMode = tabMode,
-                    selectedIndex = selectedIndex,
+                    selectedIndex = 0,
                     tabData = tabType,
                     tabWidth = tabWidth,
                     colors = colors,
@@ -59,7 +57,7 @@ fun AnimatedTabRow(
             is TabType.TitleAndIcon -> {
                 AnimatedTabRowTitleAndIcon(
                     tabMode = tabMode,
-                    selectedIndex = selectedIndex,
+                    selectedIndex = 0,
                     tabData = tabType,
                     tabWidth = tabWidth,
                     colors = colors,
