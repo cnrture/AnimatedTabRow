@@ -3,10 +3,11 @@ package com.canerture.animatedtabrow
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Favorite
@@ -40,43 +41,38 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LazyColumn(
-                        modifier = Modifier.fillMaxSize(),
+                    Column(
+                        modifier = Modifier.verticalScroll(rememberScrollState()),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(24.dp)
                     ) {
-                        item {
-                            Text(
-                                text = "AnimatedTabRow - Only Title",
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 18.sp
-                            )
-                            AnimatedTabRowOnlyTextFixed()
-                            AnimatedTabRowOnlyTextScrollable()
-                            Divider(modifier = Modifier.padding(top = 24.dp))
-                        }
-                        item {
-                            Text(
-                                text = "AnimatedTabRow - Only Icon",
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 18.sp
-                            )
-                            AnimatedTabRowOnlyIconFixed()
-                            AnimatedTabRowOnlyIconScrollable()
-                            Divider(modifier = Modifier.padding(top = 24.dp))
-                        }
-                        item {
-                            Text(
-                                text = "AnimatedTabRow - Title And Icon",
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 18.sp
-                            )
-                            AnimatedTabRowTitleAndIconFixedAlwaysShow()
-                            AnimatedTabRowTitleAndIconFixedOnlySelected()
-                            AnimatedTabRowTitleAndIconScrollableAlwaysShow()
-                            AnimatedTabRowTitleAndIconScrollableOnlySelected()
-                            Divider(modifier = Modifier.padding(top = 24.dp))
-                        }
+                        Text(
+                            text = "AnimatedTabRow - Only Title",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        AnimatedTabRowOnlyTextFixed()
+                        AnimatedTabRowOnlyTextScrollable()
+                        Divider(modifier = Modifier.padding(top = 24.dp))
+
+                        Text(
+                            text = "AnimatedTabRow - Only Icon",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        AnimatedTabRowOnlyIconFixed()
+                        AnimatedTabRowOnlyIconScrollable()
+                        Divider(modifier = Modifier.padding(top = 24.dp))
+
+                        Text(
+                            text = "AnimatedTabRow - Title And Icon",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        AnimatedTabRowTitleAndIconFixedAlwaysShow()
+                        AnimatedTabRowTitleAndIconFixedOnlySelected()
+                        AnimatedTabRowTitleAndIconScrollableAlwaysShow()
+                        AnimatedTabRowTitleAndIconScrollableOnlySelected()
+                        Divider(modifier = Modifier.padding(top = 24.dp))
                     }
                 }
             }
